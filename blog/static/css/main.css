@@ -1,0 +1,33 @@
+h1 {
+    color: red;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar .menu a:hover {
+    color: #007bff;
+}
+
+.navbar .auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
