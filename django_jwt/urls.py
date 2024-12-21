@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
 from django.contrib.auth import views as auth_views
-from blog.views import get_jwt_token,  default_layout, signup, about
+from blog.views import default_layout, signup, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,11 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('about/', about, name='about'),  # About 페이지 경로 추가
 
-    path('api/token-request/', get_jwt_token, name='get_jwt_token'),
+#  token authentication w/ djoser
+    path('api/v1/', include('djoser.urls')),
+    path('api/v1/', include('djoser.urls.authtoken')),
+
+#  authentication w/ jwt
     path('api/token/', obtain_jwt_token),
     path('api/token/verify/', verify_jwt_token),
     path('api/token/refresh/', refresh_jwt_token),

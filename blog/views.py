@@ -22,23 +22,6 @@ def posts(request):
     return HttpResponse(post_list, content_type="text/json-comment-filtered")
 
 
-def get_jwt_token(request):
-    username = "admin"
-    password = "64105379"
-
-    try:
-        response = fetch_jwt_token(username, password)
-        if response.status_code == 200:
-            return JsonResponse(response.json(), status=200)
-        else:
-            return JsonResponse({
-                "error": f"Failed to obtain token. Status code: {response.status_code}",
-                "details": response.text
-            }, status=response.status_code)
-    except Exception as e:
-        return JsonResponse({"error": "An error occurred", "details": str(e)}, status=500)
-
-
 def default_layout(request):
     # 전달할 컨텍스트 데이터 (필요한 경우)
     context = {
@@ -58,3 +41,7 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'blog/signup.html', {'form': form})
+
+
+def about(request):
+    return render(request, 'blog/about.html')  # about.html 템플릿을 렌더링
