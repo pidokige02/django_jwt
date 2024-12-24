@@ -1,13 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <a href="{% url 'post_create' %}">Create Blog Post</a>
-  {% for post in posts %}
-    <a href="{% url 'post_detail' id=post.id %}">
-      <h1>
-        {{ post.title }}<small>(published: {{ post.published_at }})</small>
-      </h1>
-      <p>{{ post.content | linebreaksbr }}</p>
-    </a>
-  {% endfor %}
+  <link rel="stylesheet" href="{% static 'blog/css/posts.css' %}">
+
+  <div class="post-container">
+    <a href="{% url 'post_create' %}" class="create-post-button">Create Blog Post</a>
+    {% for post in posts %}
+      <div class="post-card">
+        <a href="{% url 'post_detail' id=post.id %}" class="post-link">
+          <h1 class="post-title">
+            {{ post.title }}
+            <small class="post-published">(published: {{ post.published_at }})</small>
+          </h1>
+          <p class="post-content">{{ post.content | linebreaksbr }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -1,13 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <a href="{% url 'posts' %}">
-        Post List
-    </a>
-    <h1>Create Blog post</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+    <link rel="stylesheet" href="{% static 'blog/css/post_create.css' %}">
+    <div class="create-post-container">
+        <a href="{% url 'posts' %}" class="post-back-link">Post List</a>
+        <h1 class="form-title">Create Blog post</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
 {% endblock %}

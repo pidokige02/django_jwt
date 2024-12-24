@@ -1,15 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <a href="{% url 'posts' %}">
-    Post List
-  </a>
-  <h1>
-    {{ post.title }}
-  </h1>
-  <p>created: {{ post.created_at }}</p>
-  <p>updated: {{ post.updated_at }}</p>
-  <p>published: {{ post.published_at }}</p>
-  <p>author: {{ post.author.username }}</p>
-  <p>{{ post.content | linebreaksbr }}</p>
+  <link rel="stylesheet" href="{% static 'blog/css/post_detail.css' %}">
+    <div class="post-detail-container">
+      <a href="{% url 'posts' %}" class="post-back-link">Post List</a>
+      <h1 class="post-title">{{ post.title }}</h1>
+      <div class="post-meta">
+        <p>created: {{ post.created_at }}</p>
+        <p>updated: {{ post.updated_at }}</p>
+        <p>published: {{ post.published_at }}</p>
+        <p>author: {{ post.author.username }}</p>
+      </div>
+      <div class="post-content">
+        {{post.content | linebreaksbr }}
+      </div>
+    </div>
 {% endblock %}
