@@ -15,7 +15,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .services.jwt_service import fetch_jwt_token
 from .models import Post
-from .forms import SignUpForm, PostCreateForm
+from .forms import SignUpForm, PostCreateForm, PostUpdateForm
 from .serializers import PostSerializer
 
 
@@ -121,3 +121,22 @@ def post_create_api(request):
             post = serializer.save(author=request.user, published_at=now())
             return Response({'id': post.id, 'message': 'Post created successfully'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def post_update(request, id):
+    post = get_object_or_404(Post, id=id)
+
+    if request.method == "POST":
+        form = PostUpdateForm(request.POST, instance=post)  # 기존 데이터를 폼에 바인딩
+        if form.is_valid():
+            form.save()  # 폼 데이터 저장
+            return redirect('post_detail', id=post.id)  # 저장 후 상세 페이지로 이동
+    else:
+        form = PostUpdateForm(instance=post)  # GET 요청 시 기존 데이터로 폼 초기화
+
+    return render(request, 'blog/post_update.html', {'form': form, 'post': post})
+
+
+def post_delete(request, id):
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect('posts')

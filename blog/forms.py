@@ -20,3 +20,8 @@ class PostCreateForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'content')
+
+class PostUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'content', 'published_at']  # 수정 가능한 필드

@@ -15,5 +15,9 @@
       <div class="post-content">
         {{post.content | linebreaksbr }}
       </div>
+      <div class="post-actions">
+        <a href="{% url 'post_update' post.id %}" class="post-action-button update-button">수정</a>
+        <a href="{% url 'post_delete' post.id %}" class="post-action-button delete-button">삭제</a>
+      </div>
     </div>
 {% endblock %}
