@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'blog/css/post_detail.css' %}">
+    <div class="post-detail-container">
+      <a href="{% url 'posts' %}" class="post-back-link">Post List</a>
+      <h1 class="post-title">{{ post.title }}</h1>
+      <div class="post-meta">
+        <p>created: {{ post.created_at }}</p>
+        <p>updated: {{ post.updated_at }}</p>
+        <p>published: {{ post.published_at }}</p>
+        <p>author: {{ post.author.username }}</p>
+      </div>
+      <div class="post-content">
+        {{post.content | linebreaksbr }}
+      </div>
+      <div class="post-actions">
+        <a href="{% url 'post_update' post.id %}" class="post-action-button update-button">수정</a>
+        <a href="{% url 'post_delete' post.id %}" class="post-action-button delete-button">삭제</a>
+      </div>
+    </div>
+{% endblock %}

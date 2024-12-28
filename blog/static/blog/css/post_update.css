@@ -1,0 +1,55 @@
+/* Update Post Container */
+.post-update-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Back to post link */
+.post-back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.post-back-link:hover {
+  background-color: #0056b3;
+}
+/* Form actions */
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+/* Button styles */
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn-primary {
+  background-color: #28a745;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #218838;
+}
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+}

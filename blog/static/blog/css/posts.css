@@ -1,0 +1,87 @@
+/* Container for all posts */
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Button for creating a new post */
+.create-post-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.create-post-button:hover {
+  background-color: #0056b3;
+}
+/* Individual post card */
+.post-card {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.post-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+/* Link styling for post details */
+.post-link {
+  text-decoration: none;
+  color: inherit;
+}
+/* Post title */
+.post-title {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: #333;
+}
+.post-published {
+  font-size: 0.8em;
+  color: #777;
+}
+/* Post content */
+.post-content {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination .step-links a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pagination .step-links a:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination .current {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}

@@ -1,0 +1,93 @@
+/* Container for the entire post detail page */
+.post-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Back to post list link */
+.post-back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.post-back-link:hover {
+  background-color: #0056b3;
+}
+/* Post title */
+.post-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+/* Metadata (created, updated, published, author) */
+.post-meta {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 20px;
+}
+.post-meta p {
+  margin: 5px 0;
+}
+/* Post content */
+.post-content {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .post-detail-container {
+    padding: 15px;
+  }
+  .post-title {
+    font-size: 1.5em;
+  }
+  .post-back-link {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+.post-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 버튼 공통 스타일 */
+.post-action-button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* 수정 버튼 스타일 */
+.update-button {
+  background-color: #28a745;
+}
+.update-button:hover {
+  background-color: #218838;
+}
+
+/* 삭제 버튼 스타일 */
+.delete-button {
+  background-color: #dc3545;
+}
+.delete-button:hover {
+  background-color: #c82333;
+}

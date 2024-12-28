@@ -1,0 +1,65 @@
+/* Centered login form container */
+.login-container {
+    width: 320px; /* 고정된 너비 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+/* Title styling */
+.login-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+/* Form input styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  width: 100%;
+  padding: 10px; /* 컴팩트한 크기 */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/* Submit button */
+.login-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-button:hover {
+  background-color: #0056b3;
+}
+/* Footer links */
+.login-footer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #666;
+}
+.login-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+.login-footer a:hover {
+  text-decoration: underline;
+}
